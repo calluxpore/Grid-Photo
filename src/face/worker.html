@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' gp: blob: data:; connect-src 'self' gp:; script-src 'self' 'unsafe-eval' 'wasm-unsafe-eval'">
+  <title>GridPhoto face worker</title>
+</head>
+<body>
+  <canvas id="work"></canvas>
+  <canvas id="thumb" width="72" height="72"></canvas>
+  <script type="module" src="worker.js"></script>
+</body>
+</html>

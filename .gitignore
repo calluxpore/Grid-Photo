@@ -1,0 +1,26 @@
+# dependencies & builds
+node_modules/
+dist/
+out/
+
+# python (legacy version)
+.venv/
+__pycache__/
+*.pyc
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# logs
+npm-debug.log*
+*.log
+
+# downloaded face recognition models
+models/
+
+# GridPhoto photo library (copies made while running from source)
+images/

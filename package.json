@@ -1,0 +1,74 @@
+{
+  "name": "gridphoto",
+  "productName": "GridPhoto",
+  "version": "2.7.0",
+  "description": "See every photo at once: a fast, elegant photo grid viewer with a fit-to-window waterfall layout, culling, and slideshows.",
+  "main": "electron/main.js",
+  "author": "GridPhoto",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "lint": "eslint electron src",
+    "check": "node --check electron/main.js && node --check electron/preload.js",
+    "dist": "electron-builder --win",
+    "dist:dir": "electron-builder --win --dir"
+  },
+  "dependencies": {
+    "@vladmandic/face-api": "^1.7.15",
+    "exifr": "^7.1.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.0",
+    "electron": "^44.5.1",
+    "electron-builder": "^26.0.0",
+    "eslint": "^10.0.0",
+    "globals": "^16.0.0"
+  },
+  "build": {
+    "appId": "com.gridphoto.app",
+    "productName": "GridPhoto",
+    "files": [
+      "electron/**",
+      "src/**",
+      "build/icon.png",
+      "package.json",
+      "!node_modules/@vladmandic/face-api/model/**",
+      "!node_modules/@vladmandic/face-api/demo/**",
+      "!node_modules/@vladmandic/face-api/src/**",
+      "!node_modules/@vladmandic/face-api/types/**",
+      "!node_modules/@vladmandic/face-api/dist/*.map",
+      "!node_modules/@vladmandic/face-api/dist/face-api.node*",
+      "!node_modules/@vladmandic/face-api/dist/face-api.js",
+      "!node_modules/@vladmandic/face-api/dist/*nobundle*"
+    ],
+    "fileAssociations": [
+      {
+        "ext": "gphl",
+        "name": "GridPhoto grid",
+        "role": "Editor"
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "keywords": [
+    "photo",
+    "viewer",
+    "image-viewer",
+    "grid",
+    "masonry",
+    "slideshow",
+    "culling",
+    "electron"
+  ]
+}
